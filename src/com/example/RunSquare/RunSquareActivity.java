@@ -8,12 +8,33 @@ import android.os.Bundle;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class RunSquareActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(new DrawView(this));
+
+        Timer timer = new Timer();
+
+        timer.schedule(new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                RunSquareActivity.this.runOnUiThread(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        //
+                    }
+                });
+            }
+        }, 0, 10);
     }
 
     class DrawView extends SurfaceView implements SurfaceHolder.Callback {
@@ -26,8 +47,7 @@ public class RunSquareActivity extends Activity {
         }
 
         @Override
-        public void surfaceChanged(SurfaceHolder holder, int format, int width,
-                                   int height) {
+        public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
 
         }
 

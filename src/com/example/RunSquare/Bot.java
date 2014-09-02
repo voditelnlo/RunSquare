@@ -2,17 +2,23 @@ package com.example.RunSquare;
 
 import android.graphics.Rect;
 
-public class Figure {
+public class Bot {
 
     private int speed;
     private double angle;
 
     private Rect rect;
 
-    public Figure(int x, int y, int wight, int height, int speed, double angle) {
+    public Bot(int x, int y, int wight, int height, int speed, double angle) {
         this.speed = speed;
         this.angle = angle;
         this.rect = new Rect(x, y, x + wight, y + height);
+    }
+
+    public Bot(Bot bot) {
+        this.speed = bot.speed;
+        this.angle = bot.angle;
+        this.rect.set(bot.rect);
     }
 
     public void SpeedIncrease() {
