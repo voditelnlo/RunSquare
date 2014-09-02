@@ -1,5 +1,5 @@
 package com.example.RunSquare;
-
+/*
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -68,3 +68,4 @@ public class GameDraw extends View
     }
 
 }
+*/
